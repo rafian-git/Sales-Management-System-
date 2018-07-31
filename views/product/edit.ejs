@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sales Management System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/shop-item.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SALES KEEPER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Report</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+          <h3 class="my-4" align="center">Shop Name</h3>
+          <div class="list-group">
+              <a href="/home" class="list-group-item">Home</a>
+            <a href="/sales" class="list-group-item">Add New Sales</a>
+            <a href="/sales" class="list-group-item">Sales History</a>
+            <a href="/categories" class="list-group-item">Manage Category</a>
+            <a href="/products" class="list-group-item active">Manage Product</a>
+          </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+            <hr>
+            <h1>Update Category</h1>
+            <hr>
+
+            <div class="row">
+
+                <!-- Delete Category -->
+                <div class="col-lg-4">
+                  <form method="post">
+                    <div class="form-group">
+                      <label>Product Name *</label>
+                      <input type="text" class="form-control" name="pn" value="<%=product.productName%>">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Categories</label>
+                      <select class="form-control" name="cat" id="exampleFormControlSelect1">
+                          <% for(var i = 0; i < catList.length; i++){ %>
+                         <option value="<%= catList[i].categoryId %>"><%= catList[i].categoryName %></option>
+                           <% } %>
+                       </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Product Price *</label>
+                      <input type="text" name="price" class="form-control" value="<%=product.price%>">
+                    </div>
+                    <div class="form-group">
+                      <label>Product Details</label>
+                      <input type="text" name="details" class="form-control" value="<%=product.details%>">
+                    </div>
+                    <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="text" name="quantity" class="form-control" value="<%=product.quantity%>">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                  </form>
+                </div>
+
+
+        </div>
+
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark" id="myfooter">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; IDK 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
